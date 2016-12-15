@@ -3,6 +3,7 @@ package com.example.ahmaadyunus.retrofit;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -20,7 +21,7 @@ public interface UserApi {
 
     @GET("https://private-80e9a-android23.apiary-mock.com/users/{id}")
 
-    Call<User> getUser(@Path("d") String user_id);
+    Call<User> getUser(@Path("id") String user_id);
 
 
     @PUT("https://private-80e9a-android23.apiary-mock.com/users/{id}")

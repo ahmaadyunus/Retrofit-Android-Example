@@ -15,6 +15,7 @@ public class User {
     private String token_auth;
     private String created_at;
     private String updated_at;
+    private String message;
 
     public int getId() {
         return id;
@@ -29,6 +30,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getEmail() {

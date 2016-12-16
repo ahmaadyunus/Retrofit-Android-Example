@@ -65,55 +65,16 @@ public class MainActivity extends AppCompatActivity {
                             "Id = " + String.valueOf(user.getId()) +
                                     System.getProperty("line.separator") +
                                     "Email = " + user.getEmail() +
-                                    System.getProperty("line.separator") //+
-//                                    "Password = " + user.getPassword() +
-//                                    System.getProperty("line.separator") +
-//                                    "Token Auth = " + user.getToken_auth() +
-//                                    System.getProperty("line.separator") +
-//                                    "Created at = " + user.getCreated_at() +
-//                                    System.getProperty("line.separator") +
-//                                    "Updated at = " + user.getUpdated_at() +
-//                                    System.getProperty("line.separator") +
-//                                    System.getProperty("line.separator")
-
+                                    System.getProperty("line.separator")
                     );
-
                 }
             }
 
-//            @Override
-//            public void onResponse(Response<Users> response, Retrofit retrofit) {
-//                int status = response.code();
-//                tv_respond.setText(String.valueOf(status));
-//                //this extract data from retrofit with for() loop
-//                for(Users.UserItem user : response.body().getUsers()) {
-//                    tv_result_api.append(
-//                            "Id = " + String.valueOf(user.getId()) +
-//                                    System.getProperty("line.separator") +
-//                                    "Email = " + user.getEmail() +
-//                                    System.getProperty("line.separator") //+
-////                                    "Password = " + user.getPassword() +
-////                                    System.getProperty("line.separator") +
-////                                    "Token Auth = " + user.getToken_auth() +
-////                                    System.getProperty("line.separator") +
-////                                    "Created at = " + user.getCreated_at() +
-////                                    System.getProperty("line.separator") +
-////                                    "Updated at = " + user.getUpdated_at() +
-////                                    System.getProperty("line.separator") +
-////                                    System.getProperty("line.separator")
-//
-//                    );
-//
-//                }
-//
-//            }
 
             @Override
             public void onFailure(Call<Users> call, Throwable t) {
                 tv_respond.setText(String.valueOf(t));
             }
-
-//
         });
     }
     public void saveUser (){
@@ -129,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         userSave.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                Toast.makeText(MainActivity.this,""+response.message(), LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,""+response.body().getMessage(), LENGTH_SHORT).show();
 
                 Log.e("onResponse", "" + response.code() +
                         "  response body "  + response.body() +
